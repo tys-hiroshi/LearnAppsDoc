@@ -1,3 +1,8 @@
+# Step0
+
+1. http://gihyo.jp/dev/feature/01/team-development6 を読む
+
+
 # ショートカットキー
 
 ### 目的

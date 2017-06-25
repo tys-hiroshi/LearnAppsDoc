@@ -19,6 +19,7 @@ Windowsのショットカットキーは以下がある。
 | Ctrl + Shift + Esc | タスクマネージャを開く（NT系列のみ）|
 
 上記のショットカットキーのように説明に対するキーを記述しなさい。
+
 | キー | 説明 |
 | ---- | ---- |
 | Alt + PrintScreen | アクティブウィンドウのハードコピーをクリップボードに入れる |
@@ -31,6 +32,6 @@ Windowsのショットカットキーは以下がある。
 | Ctrl + V (または Shift + Ins) | 選択した項目を貼り付ける |
 | Ctrl + Y | 操作をやり直す |
 | Ctrl + Z | 操作を元に戻す |
-| Ctrl + F | Visual Studio での現在開いているファイル内を検索 |
+| Ctrl + F | Visual Studio で現在開いているファイル内を検索 |
 | Ctrl + Shift + F | Visual Studio での複数のファイル内を検索|
 | Ctrl + Shift + H | Visual Studio での複数のファイル内を置換|
