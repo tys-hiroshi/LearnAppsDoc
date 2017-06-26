@@ -117,7 +117,7 @@ http://www.objective-php.net/mvc/about
 
 #### 実践問題
 - サンプルアプリを以下の通り改修すること
-1. MST_Productテーブルにカラム：Detail (データ型:varchar(100))を追加し、「商品一覧、商品選択」画面の商品一覧で追加したカラムの値を表示すること (Detailは商品詳細)
+1. MST_Productテーブルにカラム：Detail (データ型:varchar(100))を追加し、「商品一覧、商品選択」画面の商品一覧に追加したカラムの値を表示すること (Detailは商品詳細)
 1. ASPID:0001(or 0002)の管理者がMST_Productの商品名(MST_Product.ProductName)と商品詳細(MST_Product.Detail)を変更できるようにすること
     - 管理画面の商品一覧画面と商品詳細を作成すること
     - Manage/Index にQueryParameter:aspidとamanageuseridを追加して、当該のASPIDにmanageuseridが存在する場合、商品、商品名、商品詳細を編集可能にすること(ASPIDとManageUserIdの組み合わせはテーブル：MST_Managerに定義されている)
