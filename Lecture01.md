@@ -110,8 +110,12 @@ http://www.objective-php.net/mvc/about
 
 
 ### 課題
+#### 記述問題
 - HTTP のGET Method とPOST Methodの違いを記載すること
 - OrderController.cs のL.49でOrderUtil.SelectProductName() Method にアクセスできないのはなぜか？
+- MVCのModel,Controller, Viewのそれぞれを説明しなさい
+
+#### 実践問題
 - サンプルアプリを以下の通り改修すること
 1. MST_Productテーブルにカラム：Detail (データ型:varchar(100))を追加し、「商品一覧、商品選択」画面の商品一覧で追加したカラムの値を表示すること (Detailは商品詳細)
 1. ASPID:0001(or 0002)の管理者がMST_Productの商品名(MST_Product.ProductName)と商品詳細(MST_Product.Detail)を変更できるようにすること
