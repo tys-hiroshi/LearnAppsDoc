@@ -3,45 +3,95 @@
 ## Lecture04
 Order.xml ファイルを正常かチェックするアプリケーション(CheckXmlTool)がある。
 このアプリケーションはOrder.xmlファイルを読み込み、生産工場に送信するファイルが正しいかチェックするアプリケーションである。
-異常がある場合は、対象のOrder.xmlファイルごとにLogファイルを出力する。
+チェック結果を対象のOrder.xmlファイルごとにLogファイル(CSV形式)を出力する。
+サンプルOrder
+チェック対象のタグ(Tag0~Tag4、Attributes)は以下の通りである。(以下、Format.csvという)
+URL：
 
-チェック対象のタグは以下の通りである。
+|Tag0       |Tag1 |Tag2    |Tag3    |Tag4     |Attributes|Required|Conditions                                                      |
+|-----------|-----|--------|--------|---------|----------|--------|----------------------------------------------------------------|
+|CenterOrder|     |        |        |         |          |◎       |                                                                |
+|           |Order|        |        |         |AppId     |◎       |AttributesのAppIdは0001 or 0002とする                                |
+|           |     |OrderId |        |         |          |◎       |OrderIdは6桁とする                                                   |
+|           |     |PayType |        |         |          |◎       |「2、4、5、7」のみとする                                                  |
+|           |     |ShipType|        |         |          |◎       |「2、3、6」のみとする                                                    |
+|           |     |Option  |        |         |          |        |                                                                |
+|           |     |Option1 |        |         |          |×       |                                                                |
+|           |     |Articles|        |         |ArticleNum|◎       |ArticleNumがArticles内のArticleTagの数と等しいこと。ArticleNumは1以上とする。                         |
+|           |     |        |*Article|         |          |◎       |                                                               |
+|           |     |        |        |ProductId|          |〇       |Articleタグが存在する場合は、当該のタグが存在しなければならない。MST_PriceのASP_IDとOrderタグのAttributes:AppIdに一致するデータのProductIdであること|
+|           |     |        |        |Price    |          |〇       | Articleタグが存在する場合は、当該のタグが存在しなければならない。                                                               |
 
-| タグ要素 | 必須 | チェック方法 |
+
+※ 「\*Article」のように「\*」が付く場合は複数のタグが存在を許容する。
+
+
+#### チェック方法
+
+- 必須チェック
+
+    - Requiredとは、Tag0~Tag4、Attributesに対する必須・不要を表す。(Tag0~Tag4が必須の場合はAttributesも必須である)
+
+| Required | 説明 | 備考 |
 | ---- | ---- | ---- |
-|  |  |  |
+| ◎ | 必須 | |
+| 〇 | 条件付き必須 | 条件は各タグのConditionsに記載 |
+|  | タグが存在してもしなくてもよい | |
+| × | タグ自体、存在してはならない | |
+
+- 条件チェック
+
+    - 上記のFormat.csvのConditionsの条件を満たさなければならない。満たさない場合は、ログ出力(Logファイル)されなければならない。
+
+#### ログ出力(CSV)の形式
+
+- Order.xmlに対するチェック結果はCSV形式で出力されなければならない。
+Format.csv と同様の形式で以下の通りとする。
+
+|Tag0       |Tag1 |Tag2    |Tag3    |Tag4     ||Result |
+|-----------|-----|--------|----|----|----|----|-------|
+|CenterOrder|     |        |       |         ||True   |
+|           |Order|        |       |         ||True   |
+|           |     |OrderId |       |         ||False  |
+|           |     |PayType |       |         ||True-10|
+|           |     |ShipType|       |         ||True  |
+|           |     |Option  |       |         ||True  |
+|           |     |Option1 |       |         ||True  |
+|           |     |Articles|       |         ||True  |
+|           |     |        |Article|         ||True  |
+|           |     |        |       |ProductId||False-ProductIdのタグが存在しない  |
+|           |     |        |       |Price    ||True  |
+
+※Headerは出力されない。Resultの先頭には、RequiredとConditionsを満たしている場合はTrue、満たさない場合はFalseとして、Falseの場合は必ず、Falseの後に「-」(ハイフン)で原因を出力すること。
+
+PayType、ShipTypeについては変換した結果を「-」(ハイフン)の後に出力すること。
+変換表は以下の通り。
+
+| PayType | 変換した値 |
+|----|----|
+| 2 | 10 |
+| 4 | 10 |
+| 5 | 15 |
+| 7 | 17 |
+
+| ShipType | 変換した値 |
+|----|----|
+| 2 | 1 |
+| 3 | 8 |
+| 6 | 8 |
+
 
 ### 課題
 
-#### 記述問題
-1. ログ出力ファイルの問題点
-
-    -
 #### 実践問題
-- サンプルアプリ(MVCWebApplication)を以下の通り改修すること
-1. ログ出力先のパスが存在しない場合でもログ出力を可能とする
+- サンプルアプリ(CheckXmlTool)を以下の通り改修すること。(URL：https://github.com/infinith4/CheckXmlTool . Git Repository:https://github.com/infinith4/CheckXmlTool.git)
 
-    - ./MVCWebApplication/MVCWebApplication/Common/Log.cs はログ出力のクラスである。
-    ログ出力先は、「C:\Gitrepo\LearnApps\MVCWebApplication\log\webapplication.log」である
-     「C:\Gitrepo\LearnApps\MVCWebApplication\log」のディレクトリが存在しないとエラーが発生する。
-     「C:\Gitrepo\LearnApps\MVCWebApplication\log」のディレクトリが存在しなくともエラーが発生せず、ログ出力が行われるようにしなさい。
-     ※「C:\Gitrepo\LearnApps\MVCWebApplication」のディレクトリは存在しているものとする。
-     ~/Order/SelectProduct (GetMethod)に記載の「throw new Exception()」という行のコメントアウトを外すことで強制的に例外を発生させることによりログ出力できることを確認しなさい。
+- FormatUtil.ConvertPayType() ではPayTypeを変換している。ShipTypeも同様に上記の表の通り(Switch文を用いて)変換し、CSVに出力しなさい。
 
-2. ログ出力ファイル名の変更
-    - 「C:\Gitrepo\LearnApps\MVCWebApplication\log\webapplication.log」は単一のファイルであり、今後このファイルにログ出力される。
-       ログファイル名を「webapplication.log」から「webapplication_(日付).log」へ変更すること。※(日付)にはyyyyMMddHHmmssの形式とする。例えば、「webapplication_20170715223350.log」というファイル名とすること。※String.Format()を使用すること。
+- 現状、Order タグのAttributes:AspIdのチェックがされていない。チェックをしなさい。
+  チェック条件は三項演算子を用いること。
 
-1. ~/Order/SelectProduct で選択した商品を確認する画面（注文確認画面）を用意すること
-    - アクション名はConfirmとすること
-    - 選択した商品データはSession変数で保存すること （注文データをSession変数に保存用のClassを定義すること。ただし、基底クラスをOrderModelクラスのProductクラスとして継承すること。ヒント：Serializable属性をつけることでSession変数にデータを保存できる）
-    - 注文確認画面で注文確定ボタンを押下できるようにすること。
-    - 注文確定ボタンを押下後、OrderManageテーブルのカラム名：OrderDate（Datetime型）に注文日を設定すること （カラムは自分で追加すること）
-    - 表示内容は商品名、商品価格、商品詳細を表示すること。ラベルと値を対に表示すること。※ラベルの表示は、@Html.LabelForと@Html.Label の両方を利用すること
-    - 氏名（姓と名）を入力できるようにすること。姓はOrderManage.LastName、名はOrderManage.FirstNameに保存すること。※@Html.TextBoxForを利用すること
-    - 氏名の入力制限は必須かつ最大20文字とし、全角10文字（半角20文字）とすること。
-    - 入力制限を満たしていない場合は、エラーメッセージを表示すること。（参考：http://qiita.com/mrpero/items/607c31895d77815a77cb）
-    - メールアドレスも必須とし、入力制限をつけること（半角100文字とし、正規表現の入力制限を利用すること。メールアドレスの正規表現は正確なものは難しいため、ネットにある正規表現を利用すること。）
-2. Headerに戻るボタンを用意すること
-    - 注文完了画面に遷移したら、戻るボタンは表示させないこと
-3. OrderControllerのL.35〜L.46とL.86~L.96はほぼ同じコードなので、新たにメソッドを作成し、まとめて下さい。
+- OrderIdの値が6桁という条件をチェックしなさい。
+
+- ShipType以降のタグのチェックとCSV出力が不完全である。タグ(Attributesも含む)のRequiredチェックとConditionsのチェックをし、CSV出力をしなさい。
+「ProductId」についてはMST_PriceのASP_IDとOrderタグのArttributes：AppIdが一致するデータ、かつ、ProductIdが一致することを条件とする。
