@@ -33,7 +33,7 @@ URL：https://github.com/infinith4/CheckXmlTool/blob/develop/CheckXmlTool/csv/Fo
 
 - 必須チェック
 
-    - Requiredとは、Tag0~Tag4、Attributesに対する必須・不要を表す。(Tag0~Tag4が必須の場合はAttributesも必須である)
+    - Requiredとは、Tag0～Tag4、Attributesに対する必須・不要を表す。(Tag0～Tag4が必須の場合はAttributesも必須である)
 
 | Required | 説明 | 備考 |
 | ---- | ---- | ---- |
