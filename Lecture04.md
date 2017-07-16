@@ -8,6 +8,7 @@ Order.xml ファイルを正常かチェックするアプリケーション(Che
 確認用のOrder.xmlファイルは CheckXmlTool/CheckXmlTool/xml/Order01 やOrder02フォルダ内に存在する。
 
 チェック対象のタグ(Tag0~Tag4、Attributes)は以下の通りである。(以下、Format.csvという)
+
 URL：https://github.com/infinith4/CheckXmlTool/blob/develop/CheckXmlTool/csv/Format.csv
 
 |Tag0       |Tag1 |Tag2    |Tag3    |Tag4     |Attributes|Required|Conditions                                                      |
