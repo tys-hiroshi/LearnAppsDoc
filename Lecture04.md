@@ -51,7 +51,7 @@ URL：https://github.com/infinith4/CheckXmlTool/blob/develop/CheckXmlTool/csv/Fo
 Format.csv と同様の形式で以下の通りとする。
 
 
-|Tag0       |Tag1 |Tag2    |Tag3    |Tag4     ||Result |
+|Tag0       |Tag1 |Tag2    |Tag3    |Tag4     | -- |Result |
 |-----------|-----|--------|----|----|----|----|-------|
 |CenterOrder|     |        |       |         ||True   |
 |           |Order|        |       |         ||True   |
