@@ -21,7 +21,7 @@ URL：https://github.com/infinith4/CheckXmlTool/blob/develop/CheckXmlTool/csv/Fo
 |           |     |Option  |        |         |          |        |                                                                |
 |           |     |Option1 |        |         |          |×       |                                                                |
 |           |     |Articles|        |         |ArticleNum|◎       |ArticleNumがArticles内のArticleTagの数と等しいこと。ArticleNumは1以上とする。                         |
-|           |     |        |*Article|         |          |◎       |                                                               |
+|           |     |        |\*Article|         |          |◎       |                                                               |
 |           |     |        |        |ProductId|          |〇       |Articleタグが存在する場合は、当該のタグが存在しなければならない。MST_PriceのASP_IDとOrderタグのAttributes:AppIdに一致するデータのProductIdであること|
 |           |     |        |        |Price    |          |〇       | Articleタグが存在する場合は、当該のタグが存在しなければならない。                                                               |
 
@@ -52,19 +52,20 @@ URL：https://github.com/infinith4/CheckXmlTool/blob/develop/CheckXmlTool/csv/Fo
 Format.csv と同様の形式で以下の通りとする。
 
 
-| Tag0       | Tag1 | Tag2    | Tag3    | Tag4     | (empty) | Result |
-| ----------- | ----- | -------- | ---- | ---- | ---- | ---- | ------- |
-|CenterOrder|     |        |       |         ||True   |
-|           |Order|        |       |         ||True   |
-|           |     |OrderId |       |         ||False  |
-|           |     |PayType |       |         ||True-10|
-|           |     |ShipType|       |         ||True  |
-|           |     |Option  |       |         ||True  |
-|           |     |Option1 |       |         ||True  |
-|           |     |Articles|       |         ||True  |
-|           |     |        |Article|         ||True  |
-|           |     |        |       |ProductId||False-ProductIdのタグが存在しない  |
-|           |     |        |       |Price    ||True  |
+|Tag0|Tag1|Tag2|Tag3|Tag4|(empty)|Result                    |
+|-----------|------|---------|---------|----------|---------|--------------------------|
+|CenterOrder|      |         |         |          |         |TRUE                      |
+|           |Order |         |         |          |         |TRUE                      |
+|           |      |OrderId  |         |          |         |False                     |
+|           |      |PayType  |         |          |         |True-10                   |
+|           |      |ShipType |         |          |         |True                      |
+|           |      |Option   |         |          |         |True                      |
+|           |      |Option1  |         |          |         |True                      |
+|           |      |Articles |         |          |         |True                      |
+|           |      |         |\*Article  |          |         |True                      |
+|           |      |         |         |ProductId |         |False-ProductIdのタグが存在しない|
+|           |      |         |         |Price   |         |True                      |
+
 
 
 ※Headerは出力されない。Resultの先頭には、RequiredとConditionsを満たしている場合はTrue、満たさない場合はFalseとして、Falseの場合は必ず、Falseの後に「-」(ハイフン)で原因を出力すること。
