@@ -50,6 +50,7 @@ URL：https://github.com/infinith4/CheckXmlTool/blob/develop/CheckXmlTool/csv/Fo
 - Order.xmlに対するチェック結果はCSV形式で出力されなければならない。
 Format.csv と同様の形式で以下の通りとする。
 
+
 |Tag0       |Tag1 |Tag2    |Tag3    |Tag4     ||Result |
 |-----------|-----|--------|----|----|----|----|-------|
 |CenterOrder|     |        |       |         ||True   |
@@ -63,6 +64,7 @@ Format.csv と同様の形式で以下の通りとする。
 |           |     |        |Article|         ||True  |
 |           |     |        |       |ProductId||False-ProductIdのタグが存在しない  |
 |           |     |        |       |Price    ||True  |
+
 
 ※Headerは出力されない。Resultの先頭には、RequiredとConditionsを満たしている場合はTrue、満たさない場合はFalseとして、Falseの場合は必ず、Falseの後に「-」(ハイフン)で原因を出力すること。
 
