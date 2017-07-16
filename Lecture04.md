@@ -4,9 +4,11 @@
 Order.xml ファイルを正常かチェックするアプリケーション(CheckXmlTool)がある。
 このアプリケーションはOrder.xmlファイルを読み込み、生産工場に送信するファイルが正しいかチェックするアプリケーションである。
 チェック結果を対象のOrder.xmlファイルごとにLogファイル(CSV形式)を出力する。
-サンプルOrder
+
+確認用のOrder.xmlファイルは CheckXmlTool/CheckXmlTool/xml/Order01 やOrder02フォルダ内に存在する。
+
 チェック対象のタグ(Tag0~Tag4、Attributes)は以下の通りである。(以下、Format.csvという)
-URL：
+URL：https://github.com/infinith4/CheckXmlTool/blob/develop/CheckXmlTool/csv/Format.csv
 
 |Tag0       |Tag1 |Tag2    |Tag3    |Tag4     |Attributes|Required|Conditions                                                      |
 |-----------|-----|--------|--------|---------|----------|--------|----------------------------------------------------------------|
@@ -84,14 +86,17 @@ PayType、ShipTypeについては変換した結果を「-」(ハイフン)の�
 ### 課題
 
 #### 実践問題
-- サンプルアプリ(CheckXmlTool)を以下の通り改修すること。(URL：https://github.com/infinith4/CheckXmlTool . Git Repository:https://github.com/infinith4/CheckXmlTool.git)
+- サンプルアプリ(CheckXmlTool)を以下の通り改修すること。
 
-- FormatUtil.ConvertPayType() ではPayTypeを変換している。ShipTypeも同様に上記の表の通り(Switch文を用いて)変換し、CSVに出力しなさい。
+  - URL：https://github.com/infinith4/CheckXmlTool
+  - Git Repository:https://github.com/infinith4/CheckXmlTool.git)
+  - 確認用のOrder.xmlファイルは CheckXmlTool/CheckXmlTool/xml/Order01 やOrder02フォルダ内に存在する。
+1. FormatUtil.ConvertPayType() ではPayTypeを変換している。ShipTypeも同様に上記の表の通り(Switch文を用いて)変換し、CSVに出力しなさい。
 
-- 現状、Order タグのAttributes:AspIdのチェックがされていない。チェックをしなさい。
+2. 現状、Order タグのAttributes:AspIdのチェックがされていない。チェックをしなさい。
   チェック条件は三項演算子を用いること。
 
-- OrderIdの値が6桁という条件をチェックしなさい。
+3. OrderIdの値が6桁という条件をチェックしなさい。
 
-- ShipType以降のタグのチェックとCSV出力が不完全である。タグ(Attributesも含む)のRequiredチェックとConditionsのチェックをし、CSV出力をしなさい。
+4. ShipType以降のタグのチェックとCSV出力が不完全である。タグ(Attributesも含む)のRequiredチェックとConditionsのチェックをし、CSV出力をしなさい。
 「ProductId」についてはMST_PriceのASP_IDとOrderタグのArttributes：AppIdが一致するデータ、かつ、ProductIdが一致することを条件とする。
