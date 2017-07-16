@@ -38,6 +38,9 @@ finally
 
 #### 実践問題
 - サンプルアプリ(MVCWebApplication)を以下の通り改修すること
+
+   - Git Repository: https://github.com/infinith4/MVCWebApplication.git (branch:develop)
+
 1. ログ出力先のパスが存在しない場合でもログ出力を可能とする
 
     - ./MVCWebApplication/MVCWebApplication/Common/Log.cs はログ出力のクラスである。

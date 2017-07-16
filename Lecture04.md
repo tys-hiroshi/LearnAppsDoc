@@ -89,8 +89,10 @@ PayType、ShipTypeについては変換した結果を「-」(ハイフン)の�
 - サンプルアプリ(CheckXmlTool)を以下の通り改修すること。
 
   - URL：https://github.com/infinith4/CheckXmlTool
-  - Git Repository:https://github.com/infinith4/CheckXmlTool.git)
-  - 確認用のOrder.xmlファイルは CheckXmlTool/CheckXmlTool/xml/Order01 やOrder02フォルダ内に存在する。
+  - Git Repository:https://github.com/infinith4/CheckXmlTool.git (branch:develop)
+  - 確認用のOrder.xmlファイルは CheckXmlTool/CheckXmlTool/xml/Order01 やOrder02フォルダ内に存在する。 適宜自分でOrder.xmlファイルを修正して確認すること。
+
+
 1. FormatUtil.ConvertPayType() ではPayTypeを変換している。ShipTypeも同様に上記の表の通り(Switch文を用いて)変換し、CSVに出力しなさい。
 
 2. 現状、Order タグのAttributes:AspIdのチェックがされていない。チェックをしなさい。
