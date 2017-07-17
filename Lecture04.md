@@ -54,8 +54,8 @@ Format.csv と同様の形式で以下の通りとする。
 
 |Tag0|Tag1|Tag2|Tag3|Tag4|(empty)|Result                    |
 |-----------|------|---------|---------|----------|---------|--------------------------|
-|CenterOrder|      |         |         |          |         |TRUE                      |
-|           |Order |         |         |          |         |TRUE                      |
+|CenterOrder|      |         |         |          |         |True                      |
+|           |Order |         |         |          |         |True                      |
 |           |      |OrderId  |         |          |         |False                     |
 |           |      |PayType  |         |          |         |True-10                   |
 |           |      |ShipType |         |          |         |True                      |
