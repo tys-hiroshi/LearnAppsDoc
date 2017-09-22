@@ -40,7 +40,7 @@ https://msdn.microsoft.com/ja-jp/library/dd381412(v=vs.108).aspx
 
 http://www.objective-php.net/mvc/about
 
-1. Gitのリポジトリを取得する。(URL:,branche:develop)
+1. Gitのリポジトリを取得する。(URL:https://github.com/infinith4/MVCWebApplication.git ,branche:develop)
     - C:\Gitrepo\LearnApps 内に取得する。
 
 1. IISにWebサイトを追加する
