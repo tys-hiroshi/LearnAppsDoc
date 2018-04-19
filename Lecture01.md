@@ -120,8 +120,11 @@ http://www.objective-php.net/mvc/about
 1. MST_Productテーブルにカラム：Detail (データ型:varchar(100))を追加し、「商品一覧、商品選択」画面の商品一覧に追加したカラムの値を表示すること (Detailは商品詳細)
 1. ASPID:0001(or 0002)の管理者がMST_Productの商品名(MST_Product.ProductName)と商品詳細(MST_Product.Detail)を変更できるようにすること
     - 管理画面の商品一覧画面と商品詳細を作成すること
-    - Manage/Index にUrl QueryParameter:aspidとmanageuseridを追加して、当該のASPIDにmanageuseridが存在する場合、商品、商品名、商品詳細を編集可能にすること(ASPIDとManageUserIdの組み合わせはテーブル：MST_Managerに定義されている)
-    - コントローラ：ManageController、モデル：ManageModelを追加し、画面のURL、Viewは適宜、自分で追加・Method名を決めること
+    - Manage/Index にUrl QueryParameter:aspidとmanageuserid(ASP_IDの管理者ID)を追加して、当該のASPIDにmanageuseridが存在する場合、商品、商品名、商品詳細を編集可能にすること(ASPIDとManageUserIdの組み合わせはテーブル：MST_Managerに定義されている)
+        - ManageControllerのIndex Methodに引数を追加すれば、Url Query Parameterの値が取得できる。Request.QueryStringを使ってもいいけどいまいち。
+        - MST_Managerテーブルに当該のレコードが存在しているかチェックし、存在しているなら~/Manage/Indexで商品一覧が表示されること。存在しないなら、商品一覧が表示されないこと(エラー画面が表示されるなど)。
+    - コントローラ：ManageController、モデル：ManageModelを追加し、画面のURL、Viewは適宜、自分で追加・Method名を決めること。(例：商品詳細画面は~/Manage/Edit/[id]など)
     - 商品一覧画面では商品一覧を表示し、商品名(ProductName)のリンクをクリックしたら、当該の商品詳細画面を表示して、商品名と商品詳細を変更できるようにすること。
+    - 商品詳細画面で変更が完了したら~/Manage/Indexに遷移すること。
 1. 2.で作成した管理画面の商品一覧画面で商品の新規追加ボタンを押下したら、商品新規追加画面に遷移し、商品ID、商品名、商品詳細を入力し商品を追加できるようにすること
-2. 1. 2.で作成した商品詳細画面に遷移し、商品を削除できるようにすること
+2. 1., 2.で作成した商品詳細画面に遷移し、商品を削除できるようにすること
