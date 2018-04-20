@@ -79,3 +79,42 @@ View側(cshtml)
 @model List<OrderModel.Product>
 ```
 
+
+### DBのレコード更新について
+
+以下でも良いけど、Attach,Entryしないといけないから面倒。
+
+```
+using(var _db = new LearnAppsEntities())
+{
+  MST_Price mst_Price = new MST_Price();
+  mst_Price.ProductId = 1;
+  mst_Price.Price = 100;
+  mst_Price.ASP_ID = "0001";
+
+  _db.MST_Price.Attach(mst_Price);
+  _db.Entry(mst_Price).Property(m => m.Price).IsModified = true; // 対象フィールドを更新指定
+  _db.SaveChanges();
+}
+
+```
+
+
+以下のように書いたほうが楽。
+
+```
+using(var _db = new LearnAppsEntities())
+{
+  var mst_Price = (from mst_Price in _db.MST_Price
+                   join mst_Product in _db.MST_Product on  equals mst_Product.ProductId
+                   where mst_Price.ASP_ID == "0001" && mst_Price.ProductId == 1
+                   select mst_price).SingleOrDefault();
+  mst_Price.Price = 100;  //100に書き換え
+  _db.SaveChanges();
+}
+
+```
+
+参考:
+http://kobarin.hateblo.jp/entry/2017/07/05/102834
+https://densan-labs.net/tech/codefirst/adddelete.html
