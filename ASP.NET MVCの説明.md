@@ -105,9 +105,9 @@ using(var _db = new LearnAppsEntities())
 ```
 using(var _db = new LearnAppsEntities())
 {
-  var mst_Price = (from mst_Price in _db.MST_Price
-                   where mst_Price.ASP_ID == "0001" && mst_Price.ProductId == 1
-                   select mst_price).SingleOrDefault();
+  var mst_Price = (from mst in _db.MST_Price
+                   where mst.ASP_ID == "0001" && mst.ProductId == 1
+                   select mst).SingleOrDefault();
   mst_Price.Price = 100;  //100に書き換え
   _db.SaveChanges();
 }
