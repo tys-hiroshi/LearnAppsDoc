@@ -114,6 +114,20 @@ using(var _db = new LearnAppsEntities())
 
 ```
 
+一般的には以下の通り。
+```
+using(var _db = new 【Entities】)
+{
+  var 【変数名】 = (from 【一時的な変数名】 in _db.【テーブル名】
+                   where 【一時的な変数名】.【テーブルのカラム】 == 【条件に合う値】
+                   select 【一時的な変数名】).SingleOrDefault();  //SingleOrDefault();を付けると一つレコードまたは1つも条件に一致しなかったらNull
+  【変数名】.【テーブルの変更したいカラム】 = 【変更したい値】;
+  _db.SaveChanges();  //保存処理の実行(ここで実行される)
+}
+
+```
+
+
 参考:
 http://kobarin.hateblo.jp/entry/2017/07/05/102834
 https://densan-labs.net/tech/codefirst/adddelete.html
