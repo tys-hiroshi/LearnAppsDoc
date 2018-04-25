@@ -29,12 +29,19 @@ finally
 ### 課題
 
 #### 記述問題
-1. ログ出力ファイルの問題点
+
+1. 名前空間とは何か説明しなさい。
+
+2. インスタンスとは何か説明しなさい。
+
+3. コンストラクタとは何か説明しなさい。
+
+4. ログ出力ファイルの問題点
 
     - MVCWebApplicationでは「C:\Gitrepo\LearnApps\MVCWebApplication\log\webapplication.log」は単一のファイルであり、今後このファイルにログ出力される。
       問題点は何か指摘して下さい。そして、その問題点に対する対策方法を記載して下さい。
 
-2. ログ出力ファイル「C:\Gitrepo\LearnApps\MVCWebApplication\log\webapplication.log」をテキストエディタで開いたまま、Webアプリケーションで書き込みを行おうとした場合、例外が発生する。なぜか？
+5. ログ出力ファイル「C:\Gitrepo\LearnApps\MVCWebApplication\log\webapplication.log」をテキストエディタで開いたまま、Webアプリケーションで書き込みを行おうとした場合、例外が発生する。なぜか？
 
 #### 実践問題
 - サンプルアプリ(MVCWebApplication)を以下の通り改修すること
