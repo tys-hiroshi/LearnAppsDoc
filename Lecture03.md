@@ -55,7 +55,7 @@ finally
      「C:\Gitrepo\LearnApps\MVCWebApplication\log」のディレクトリが存在しないとエラーが発生する。
      「C:\Gitrepo\LearnApps\MVCWebApplication\log」のディレクトリが存在しなくともエラーが発生せず、ログ出力が行われるようにしなさい。
      ※「C:\Gitrepo\LearnApps\MVCWebApplication」のディレクトリは存在しているものとする。
-     ~/Order/SelectProduct (GetMethod)に記載の「throw new Exception()」という行のコメントアウトを外すことで強制的に例外を発生させることによりログ出力できることを確認しなさい。
+     ~/Order/SelectProduct (HttpGet Method)に記載の「throw new Exception()」という行のコメントアウトを外すことで強制的に例外を発生させることによりログ出力できることを確認しなさい。
 
 2. ログ出力ファイル名の変更
     - 「C:\Gitrepo\LearnApps\MVCWebApplication\log\webapplication.log」は単一のファイルであり、今後このファイルにログ出力される。
