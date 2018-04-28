@@ -19,6 +19,8 @@
 
 参考:
 
+https://docs.microsoft.com/ja-jp/dotnet/csharp/
+
 http://ufcpp.net/study/csharp/
 
 https://qiita.com/toshi0607/items/801a0d37fb48313cbdbd
@@ -47,14 +49,14 @@ C#で電卓を作りなさい。
 5. 階乗の計算 (正の整数の階乗に対応すること)
 6. 三角関数の計算(sin, cos, tan)
 7. フィボナッチ数列の計算 (参考：https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A3%E3%83%9C%E3%83%8A%E3%83%83%E3%83%81%E6%95%B0, https://www.studyplus.jp/445)
-<div style="background:#ffffff">
+<ol style="background:#ffffff">
 <img src="./FibonacciNumber0.gif" style="background:#ffffff"/><br />
 <img src="./FibonacciNumber1.gif" style="background:#ffffff"/>
-</div>
+</ol>
 
 8. historyコマンドを入力したら、コンソール画面上に入力した履歴とその出力が表示されること
 9. historyコマンドにオプション--logを入力したら、Exeと同階層にLogフォルダが作成され、コンソール画面上に入力した履歴とその出力内容が[yyyyMMddhhmmss].logというファイルが作成されること
-    - 具体的には、> history --log と入力する
+    - 具体的には、> history --log と入力する。historyと--logの間に1つ以上のスペースがあっても実行されること。
     - [yyyyMMddhhmmss]は、日付日時のFormatとする
 
 ※小数点以下第3位まで精度が正しければよい
@@ -77,7 +79,7 @@ C#で電卓を作りなさい。
 ##### 非機能要件
 
 1. 保守性を高めるため、Utility Classなどを作成し、機能要件の1～7は個別の関数(Method)を定義すること。
-2. 計算不能な入力があったとしても、アプリケーションでエラーメッセージを表示し、アプリケーションが強制的に終了することがないようにする。(可用性)
+2. 計算不能な入力があったとしても、アプリケーションでエラーメッセージを表示し、アプリケーションが強制的に終了することがないようにする。try,catchなどを利用すること。(可用性)
 3. 記述問題の各項目について実践問題で実装したプログラムにコメントアウトでどの部分にあたるか記載しなさい。
     - 例: 2のクラスなら以下の通りとする
 
