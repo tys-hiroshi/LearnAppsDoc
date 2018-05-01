@@ -21,4 +21,4 @@
     - エラーメッセージは「@Html.ValidationMessageFor」や「ModelState.AddModelError」を利用すること
 2. Headerに戻るボタンを用意すること
     - 注文完了画面に遷移したら、戻るボタンは表示させないこと。(例：cshtmlで@ifを利用する)
-3. OrderControllerのL.35〜L.46とL.86~L.96はほぼ同じコードなので、新たにメソッドを作成し、まとめて下さい。
+3. OrderControllerのL.35〜L.46とL.89~L.97はほぼ同じコードなので、新たにメソッドを作成し、まとめて下さい。
