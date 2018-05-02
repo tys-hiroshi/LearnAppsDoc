@@ -101,6 +101,14 @@ PayType、ShipTypeについては変換した結果を「-」(ハイフン)の�
 8. フィールドとは何か説明しなさい。
 9. コンストラクタとは何か説明しなさい。
 
+参考:
+
+https://docs.microsoft.com/ja-jp/dotnet/csharp/
+
+http://ufcpp.net/study/csharp/
+
+https://qiita.com/toshi0607/items/801a0d37fb48313cbdbd
+
 #### 実践問題
 - サンプルアプリ(CheckXmlTool)を以下の通り改修すること。
 
