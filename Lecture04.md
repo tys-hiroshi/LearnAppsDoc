@@ -119,7 +119,7 @@ https://qiita.com/toshi0607/items/801a0d37fb48313cbdbd
 
 1. FormatUtil.ConvertPayType() ではPayTypeを変換している。ShipTypeも同様に上記の表の通り(Switch文を用いて)変換し、CSVに出力しなさい。
 
-2. 現状、Order タグのAttributes:AspIdのチェックがされていない。チェックをしなさい。
+2. 現状、Order タグのAttributes:AppIdのチェックがされていない。チェックをしなさい。
   チェック条件は三項演算子を用いること。
 
 3. OrderIdの値が6桁という条件をチェックしなさい。
