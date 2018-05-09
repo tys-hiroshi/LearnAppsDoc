@@ -23,7 +23,7 @@ URL：https://github.com/infinith4/CheckXmlTool/blob/develop/CheckXmlTool/csv/Fo
 |           |     |Articles|        |         |ArticleNum|◎       |ArticleNumがArticles内のArticleTagの数と等しいこと。ArticleNumは1以上とする。                         |
 |           |     |        |\*Article|         |          |◎       |                                                               |
 |           |     |        |        |ProductId|          |〇       |Articleタグが存在する場合は、当該のタグが存在しなければならない。MST_PriceのASP_IDとOrderタグのAttributes:AppIdに一致するデータのProductIdであること|
-|           |     |        |        |Price    |          |〇       | Articleタグが存在する場合は、当該のタグが存在しなければならない。                                                               |
+|           |     |        |        |Price    |          |〇       | Articleタグが存在する場合は、当該のタグが存在しなければならない。また、Priceタグ内に値が存在しなければならない。                                                               |
 
 
 ※ 「\*Article」のように「\*」が付く場合は複数のタグが存在を許容する。
