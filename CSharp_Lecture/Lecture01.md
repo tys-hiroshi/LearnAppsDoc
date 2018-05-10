@@ -3,21 +3,21 @@
 ## Lecture01
 
 
-### �ۑ�
+### 課題
 
-#### �L�q���
+#### 記述問題
 
-1. ���O��ԂƂ͉����������Ȃ����B
-2. �N���X�Ƃ͉����������Ȃ����B
-3. �I�u�W�F�N�g�Ƃ͉����������Ȃ����B
-4. �p���Ƃ͉����������Ȃ����B
-5. ���\�b�h�Ƃ͉����������Ȃ����B
-6. �A�N�Z�X�w��q�Ƃ͉����������Ȃ����BC#�ɂ͂ǂ�Ȏ�ނ����邩�����Ȃ����B(�Œ�4��)
-7. �v���p�e�B�Ƃ͉����������Ȃ����B
-8. �t�B�[���h�Ƃ͉����������Ȃ����B
-9. �R���X�g���N�^�Ƃ͉����������Ȃ����B
+1. 名前空間とは何か説明しなさい。
+2. クラスとは何か説明しなさい。
+3. オブジェクトとは何か説明しなさい。
+4. 継承とは何か説明しなさい。
+5. メソッドとは何か説明しなさい。
+6. アクセス指定子とは何か説明しなさい。C#にはどんな種類があるか答えなさい。(最低4つ)
+7. プロパティとは何か説明しなさい。
+8. フィールドとは何か説明しなさい。
+9. コンストラクタとは何か説明しなさい。
 
-�Q�l:
+参考:
 
 https://docs.microsoft.com/ja-jp/dotnet/csharp/
 
@@ -26,42 +26,42 @@ http://ufcpp.net/study/csharp/
 https://qiita.com/toshi0607/items/801a0d37fb48313cbdbd
 
 
-#### ���H���
+#### 実践問題
 
-C#�œd������Ȃ����B
+C#で電卓を作りなさい。
 
-�ȉ��̎d�l�̒ʂ�Ƃ��邱�ƁB
+以下の仕様の通りとすること。
 
-##### �O�����
+##### 前提条件
 
-- �R���\�[���A�v���P�[�V����(.NET Framework)�ō쐬���邱�ƁB
-- .NET Framework�̃o�[�W������4.6.2�Ƃ���B
-- Project����Calculator�Ƃ��邱�ƁB
+- コンソールアプリケーション(.NET Framework)で作成すること。
+- .NET Frameworkのバージョンは4.6.2とする。
+- Project名はCalculatorとすること。
 
-##### �@�\�v��
+##### 機能要件
 
-�ȉ��̌v�Z���ł��邱�ƁB
+以下の計算ができること。
 
-1. �l�����Z
-2. �����̌v�Z
-3. ���[�g�̌v�Z
-4. �ׂ���̌v�Z (�ׂ����͐��̐����Ƃ���)
-5. �K��̌v�Z (���̐����̊K��ɑΉ����邱��)
-6. �O�p�֐��̌v�Z(sin, cos, tan)
-7. �t�B�{�i�b�`����̌v�Z (�Q�l�Fhttps://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A3%E3%83%9C%E3%83%8A%E3%83%83%E3%83%81%E6%95%B0, https://www.studyplus.jp/445)
+1. 四則演算
+2. 平方の計算
+3. ルートの計算
+4. べき乗の計算 (べき数は正の整数とする)
+5. 階乗の計算 (正の整数の階乗に対応すること)
+6. 三角関数の計算(sin, cos, tan)
+7. フィボナッチ数列の計算 (参考：https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A3%E3%83%9C%E3%83%8A%E3%83%83%E3%83%81%E6%95%B0, https://www.studyplus.jp/445)
 <ol style="background:#ffffff">
 <img src="./FibonacciNumber0.gif" style="background:#ffffff"/><br />
 <img src="./FibonacciNumber1.gif" style="background:#ffffff"/>
 </ol>
 
-8. history�R�}���h����͂�����A�R���\�[����ʏ�ɓ��͂��������Ƃ��̏o�͂��\������邱��
-9. history�R�}���h�ɃI�v�V����--log����͂�����AExe�Ɠ��K�w��Log�t�H���_���쐬����A�R���\�[����ʏ�ɓ��͂��������Ƃ��̏o�͓��e��[yyyyMMddhhmmss].log�Ƃ����t�@�C�����쐬����邱��
-    - ��̓I�ɂ́A> history --log �Ɠ��͂���Bhistory��--log�̊Ԃ�1�ȏ�̃X�y�[�X�������Ă����s����邱�ƁB
-    - [yyyyMMddhhmmss]�́A���t������Format�Ƃ���
+8. historyコマンドを入力したら、コンソール画面上に入力した履歴とその出力が表示されること。(historyと入力したら履歴とその出力が表示される。コンソールアプリケーションの起動からコマンドを入力するまでの履歴とそので良い)
+9. historyコマンドにオプション--logを入力したら、Exeと同階層にLogフォルダが作成され、コンソール画面上に入力した履歴とその出力内容が[yyyyMMddhhmmss].logというファイルが作成されること
+    - 具体的には、> history --log と入力する。historyと--logの間に1つ以上のスペースがあっても実行されること。
+    - [yyyyMMddhhmmss]は、日付日時のFormatとする
 
-�������_�ȉ���3�ʂ܂Ő��x����������΂悢
+※小数点以下第3位まで精度が正しければよい
 
-�Ⴆ�΁A�ȉ��̒ʂ�̓�������邱�ƁB
+例えば、以下の通りの動作をすること。
 
 ````
 > 1+1
@@ -72,19 +72,27 @@ C#�œd������Ȃ����B
 20
 > -5/4
 -1.25
-
+> history
+1+1
+2
+5-1
+4
+-5*4
+20
+-5/4
+-1.25
 ````
 
 
-##### ��@�\�v��
+##### 非機能要件
 
-1. �ێ琫�����߂邽�߁AUtility Class�Ȃǂ��쐬���A�@�\�v����1�`7�͌ʂ̊֐�(Method)���`���邱�ƁB
-2. �v�Z�s�\�ȓ��͂��������Ƃ��Ă��A�A�v���P�[�V�����ŃG���[���b�Z�[�W��\�����A�A�v���P�[�V�����������I�ɏI�����邱�Ƃ��Ȃ��悤�ɂ���Btry,catch�Ȃǂ𗘗p���邱�ƁB(�p��)
-3. �L�q���̊e���ڂɂ��Ď��H���Ŏ��������v���O�����ɃR�����g�A�E�g�łǂ̕����ɂ����邩�L�ڂ��Ȃ����B
-    - ��: 2�̃N���X�Ȃ�ȉ��̒ʂ�Ƃ���
+1. 保守性を高めるため、Utility Classなどを作成し、機能要件の1～7は個別の関数(Method)を定義すること。
+2. 計算不能な入力があったとしても、アプリケーションでエラーメッセージを表示し、アプリケーションが強制的に終了することがないようにする。try,catchなどを利用すること。(可用性)
+3. 記述問題の各項目について実践問題で実装したプログラムにコメントアウトでどの部分にあたるか記載しなさい。
+    - 例: 2のクラスなら以下の通りとする
 
     ````
-    public class Person {  //2. �N���X
+    public class Person {  //2. クラス
         public string Name { get; set; }
     }
     ````
