@@ -48,7 +48,7 @@ C#で電卓を作りなさい。
 4. べき乗の計算 (べき数は正の整数とする)
 5. 階乗の計算 (正の整数の階乗に対応すること)
 6. 三角関数の計算(sin, cos, tan) (各関数の引数は角度(degree)とすること)
-7. フィボナッチ数列の計算 (Fibonacci(n) と入力すると、n番目までの結果が表示されること)(参考：https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A3%E3%83%9C%E3%83%8A%E3%83%83%E3%83%81%E6%95%B0, https://www.studyplus.jp/445)
+7. フィボナッチ数列の計算 (Fibonacci(p) と入力すると、p番目までの結果が表示されること)(参考：https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A3%E3%83%9C%E3%83%8A%E3%83%83%E3%83%81%E6%95%B0, https://www.studyplus.jp/445)
 <ol style="background:#ffffff">
 <img src="./FibonacciNumber0.gif" style="background:#ffffff"/><br />
 <img src="./FibonacciNumber1.gif" style="background:#ffffff"/>
