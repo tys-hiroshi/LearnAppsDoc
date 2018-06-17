@@ -42,6 +42,7 @@ http://www.objective-php.net/mvc/about
 
 1. Gitのリポジトリを取得する。(URL:https://github.com/infinith4/MVCWebApplication.git ,branche:develop)
     - C:\Gitrepo\LearnApps 内に取得する。
+    - C:\Gitrepo\LearnApps\MVCWebApplication\MVCWebApplication\Web.config 内のConnectionStringの箇所に追記する必要があるので、担当者にお知らせください。
 
 1. IISにWebサイトを追加する
     - サイト名：LearnApps、アプリケーションプール：LearnApps、コンテンツディレクトリ：C:\Gitrepo\LearnApps、ポート：6012
