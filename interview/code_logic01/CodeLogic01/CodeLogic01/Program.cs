@@ -1,11 +1,8 @@
-# 課題
-
-## コーディングロジック問題
-
-以下のC# のコードで何をしているか説明して下さい。
-
-```
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CodeLogic01
 {
@@ -16,6 +13,8 @@ namespace CodeLogic01
             try
             {
                 var baseNumbers = new BaseNumbers(args);
+                //http://jd-engineer.hateblo.jp/entry/2017/06/17/114824
+                //n進数(x)からm進数に変換するコード
                 var result = Convert(baseNumbers);
             }
             catch (Exception ex)
@@ -48,11 +47,10 @@ namespace CodeLogic01
 
             public BaseNumbers(string[] args)
             {
-                Value = int.Parse(args[0]);
-                NNumbers = int.Parse(args[1]);
-                MNumbers = int.Parse(args[2]);
+                Value = int.Parse(args[0]);  //変換値(n進数)
+                NNumbers = int.Parse(args[1]);  //n進数の指定
+                MNumbers = int.Parse(args[2]);  //m進数の指定
             }
         }
     }
 }
-```
