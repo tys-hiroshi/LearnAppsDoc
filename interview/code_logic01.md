@@ -61,8 +61,11 @@ namespace CodeLogic01
 ### 実行例
 
 ```
-CodeLogic01.exe 10 2
-CodeLogic01.exe 13 2
-CodeLogic01.exe 3 3
-CodeLogic01.exe 14 3
+> CodeLogic01.exe 10 2
+
+> CodeLogic01.exe 13 2
+
+> CodeLogic01.exe 3 3
+
+> CodeLogic01.exe 14 3
 ```
