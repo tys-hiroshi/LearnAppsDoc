@@ -49,5 +49,30 @@ namespace CodeLogic01.Tests
             baseNumbers = new Program.BaseNumbers(args);
             Assert.AreEqual(1101, Program.Convert(baseNumbers));
         }
+
+        [TestMethod]
+        public void BaseTenNumberToBaseThreeNumberTestMethod()
+        {
+            string convertedBaseNumber = "3";
+            var args = new string[] { "0", convertedBaseNumber };
+            var baseNumbers = new Program.BaseNumbers(args);
+            Assert.AreEqual(0, Program.Convert(baseNumbers));
+
+            args = new string[] { "1", convertedBaseNumber };
+            baseNumbers = new Program.BaseNumbers(args);
+            Assert.AreEqual(1, Program.Convert(baseNumbers));
+
+            args = new string[] { "2", convertedBaseNumber };
+            baseNumbers = new Program.BaseNumbers(args);
+            Assert.AreEqual(2, Program.Convert(baseNumbers));
+
+            args = new string[] { "3", convertedBaseNumber };
+            baseNumbers = new Program.BaseNumbers(args);
+            Assert.AreEqual(10, Program.Convert(baseNumbers));
+
+            args = new string[] { "14", convertedBaseNumber };
+            baseNumbers = new Program.BaseNumbers(args);
+            Assert.AreEqual(112, Program.Convert(baseNumbers));
+        }
     }
 }
