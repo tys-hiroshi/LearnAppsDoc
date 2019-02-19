@@ -6,7 +6,7 @@
 
 ### コード
 
-```
+```csharp
 using System;
 
 namespace CodeLogic01
